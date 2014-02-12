@@ -126,6 +126,16 @@ void TestWeakClass(WeakClass *pWeakClass)
     
 }
 
+void TestStrongClass1()
+{
+   
+   sp<StrongClass> spOut = new StrongClass();
+   
+   spOut -> printRefCount();
+       
+    
+}    
+
 
 //Test forever class
 //void TestForeverClass(ForeverClass *pForeverClass)
@@ -151,6 +161,9 @@ int main(int argc, char **argv)
     printf("[%s]: test weak class\n", __FUNCTION__);
     WeakClass *pWeakClass =  new WeakClass();
     TestWeakClass(pWeakClass);
+    
+    printf("[%s]: test strong class 1\n", __FUNCTION__);
+    TestStrongClass1();
     
     return 0;    
 }    
